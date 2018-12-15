@@ -9,7 +9,7 @@ char * ftoa(float num) {
     if(num < 0) {
         symbol = false;
         num = -num;
-    }`      1``
+    }
 
     int integer_num = floor(num);
 
@@ -36,20 +36,29 @@ char *max_common_str(char *first_str, char *second_str) {
     int max_common_len = 0;
     int max_from_index = 0;
 
+    int current_common_len = 0;
     for(int i = 0; i < strlen(first_str); ++i) {
-        int current_from_index = i;
-        int current_common_len = 0;
-        for(int j = 0; j < strlen(second_str); ++j) {
-            if(first_str[i+j] == second_str[j]) {
-                ++current_common_len;
+//        int current_from_index = i;
+        int flag = 0;
+        for(int k = 0; k < strlen(second_str); ++k) {
+            for(int j = k; j < strlen(second_str); ++j) {
+                if(first_str[i+j] == second_str[j]) {
+                    ++current_common_len;
+                } else {
+                    flag = 1;
+                    break;
+                }
+            }
+            if(flag == 1) {
+                continue;
             } else {
-                break;
+                if(max_common_len < current_common_len) {
+                    max_from_index = k;
+                    max_common_len = current_common_len;
+                }
             }
         }
-        if(max_common_len < current_common_len) {
-            max_from_index = i;
-            max_common_len = current_common_len;
-        }
+
     }
     printf("begin:%d (%c), length:%d\n", max_from_index, first_str[max_from_index], max_common_len);
     char *common_str = malloc(sizeof(char)*(max_common_len+1));
@@ -69,11 +78,19 @@ int main() {
     char *a = "I come vfrom ZhengZhou";
     char *b = "I come vZheng to";
 //    printf("%d\n", strlen("abc"));
-//    printf("common str:%s\n", max_common_str(a, b));
+    printf("%s---%s\ncommon str:%s\n", a, b, max_common_str(a, b));
 
-    char *a1 = "I come vfrom ZhengZhouv";
+    char *a1 = "I come from ZhengZhouv";
     char *b1 = "ZhengZhoue";
-    printf("%s\n%s\ncommon str:%s\n", a1, b1, max_common_str(a1, b1));
+    printf("%s---%s\ncommon str:%s\n", a1, b1, max_common_str(a1, b1));
+
+    char *a2 = "I come from ZhengZhouv";
+    char *b2 = "aaaaZhengZhouedddd";
+    printf("%s---%s\ncommon str:%s\n", a2, b2, max_common_str(a2, b2));
+
+    char *a3 = "aaa";
+    char *b3 = "bbb";
+    printf("%s---%s\ncommon str:%s\n", a3, b3, max_common_str(a3, b3));
 
 //    printf("% s\n", )
     return 0;
