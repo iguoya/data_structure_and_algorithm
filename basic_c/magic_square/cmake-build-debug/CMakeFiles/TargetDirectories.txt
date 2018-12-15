@@ -1,0 +1,4 @@
+/home/tiger/algorithm/magic_square/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/tiger/algorithm/magic_square/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/tiger/algorithm/magic_square/cmake-build-debug/CMakeFiles/unix_test.dir
+/home/tiger/algorithm/magic_square/cmake-build-debug/CMakeFiles/magic_square.dir

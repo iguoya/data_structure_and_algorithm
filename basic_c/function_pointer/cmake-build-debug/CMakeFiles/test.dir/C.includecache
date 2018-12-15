@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tiger/algorithm/test/main.c
+stdio.h
+-
+unistd.h
+-
+stdio.h
+-
+time.h
+-
+stdlib.h
+-
+string.h
+-
+

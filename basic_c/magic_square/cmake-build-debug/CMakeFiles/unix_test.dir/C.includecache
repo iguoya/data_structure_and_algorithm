@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tiger/algorithm/magic_square/matrix.c
+matrix.h
+/home/tiger/algorithm/magic_square/matrix.h
+stdbool.h
+-
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+tgmath.h
+-
+
+/home/tiger/algorithm/magic_square/matrix.h
+
+/home/tiger/algorithm/magic_square/unit_test_main.c
+stdio.h
+-
+check.h
+-
+matrix.h
+/home/tiger/algorithm/magic_square/matrix.h
+
